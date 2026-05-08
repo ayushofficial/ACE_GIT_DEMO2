@@ -4,3 +4,5 @@
 * clear()
 * equal()
 * Edited by Ayush()
+* 1234
+
