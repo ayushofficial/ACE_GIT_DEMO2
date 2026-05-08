@@ -1,5 +1,7 @@
 ## **GUI based Calculator**
 
-- click()
-- clear()
-- equal()
+* click()
+* clear()
+* equal()
+* Edited by Ayush()
+
