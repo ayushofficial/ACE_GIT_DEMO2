@@ -1,0 +1,5 @@
+## **GUI based Calculator**
+
+- click()
+- clear()
+- equal()
