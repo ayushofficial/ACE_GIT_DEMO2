@@ -1,4 +1,4 @@
-## **GUI based Calculator**
+## **GUI based Calculator - Docs**
 
 - click()
 - clear()
