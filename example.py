@@ -19,9 +19,17 @@ def button_equal():
 
 root = tk.Tk()
 root.title("Calculator")
+root.geometry("400x500")
+root.config(bg="#2c3e50")
 
-entry = tk.Entry(root, width=35, borderwidth=5)
-entry.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
+# Configure grid weights for responsiveness
+for i in range(6):
+    root.grid_rowconfigure(i, weight=1)
+for i in range(4):
+    root.grid_columnconfigure(i, weight=1)
+
+entry = tk.Entry(root, borderwidth=5, font=("Arial", 20), bg="#ecf0f1", fg="#2c3e50", justify="right")
+entry.grid(row=0, column=0, columnspan=4, padx=10, pady=20, sticky="nsew")
 
 # Define buttons
 buttons = [
@@ -33,13 +41,15 @@ buttons = [
 
 for (text, row, col) in buttons:
     if text == '=':
-        btn = tk.Button(root, text=text, padx=40, pady=20, command=button_equal)
+        btn = tk.Button(root, text=text, padx=40, pady=20, font=("Arial", 16), bg="#27ae60", fg="white", command=button_equal, activebackground="#229954")
+    elif text in ['+', '-', '*', '/']:
+        btn = tk.Button(root, text=text, padx=40, pady=20, font=("Arial", 16), bg="#e74c3c", fg="white", command=lambda t=text: button_click(t), activebackground="#c0392b")
     else:
-        btn = tk.Button(root, text=text, padx=40, pady=20, command=lambda t=text: button_click(t) if t not in ['+', '-', '*', '/'] else button_click(t))
-    btn.grid(row=row, column=col)
+        btn = tk.Button(root, text=text, padx=40, pady=20, font=("Arial", 16), bg="#3498db", fg="white", command=lambda t=text: button_click(t), activebackground="#2980b9")
+    btn.grid(row=row, column=col, padx=5, pady=5)
 
 # Clear button
-clear_btn = tk.Button(root, text='Clear', padx=79, pady=20, command=button_clear)
-clear_btn.grid(row=5, column=0, columnspan=4)
+clear_btn = tk.Button(root, text='Clear', padx=79, pady=20, font=("Arial", 14), bg="#95a5a6", fg="white", command=button_clear, activebackground="#7f8c8d")
+clear_btn.grid(row=5, column=0, columnspan=4, padx=5, pady=10)
 
 root.mainloop()
