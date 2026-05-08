@@ -1,1 +1,5 @@
-Hello Morning Friend
+GUI based Calculator
+
+- click
+- clear
+- equal
