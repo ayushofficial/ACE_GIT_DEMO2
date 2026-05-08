@@ -30,6 +30,7 @@ for i in range(4):
 
 entry = tk.Entry(root, borderwidth=5, font=("Arial", 20), bg="#ecf0f1", fg="#2c3e50", justify="right")
 entry.grid(row=0, column=0, columnspan=4, padx=10, pady=20, sticky="nsew")
+entry.bind('<Return>', lambda e: button_equal())
 
 # Define buttons
 buttons = [
